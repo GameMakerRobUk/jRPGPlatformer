@@ -28,8 +28,46 @@ function check_ascend(){
 				show_debug_message("NOT Facing a block which is one level higher");
 			}
 		}; break;
-		case FACING.DOWN : curve = ascend.DOWN; break;
-		case FACING.LEFT : curve = ascend.LEFT; break;
+		case FACING.DOWN : {
+			show_debug_message("FACING DOWN");
+			
+			//If we're at the left edge, exit
+			if (coords.y == obj_grid.vcells - 1){
+				show_debug_message("we're at the bottom edge, exiting");
+				return;
+			}
+			
+			var _coords = get_coords(x, y + CELL_SIZE);
+			//get the cell and check its height
+			var _cell = global.grid[_coords.x][_coords.y];
+			if (_cell.height - level == 1){
+				curve = ascend.DOWN;
+				set_default_player_vars();
+				return;
+			}else{
+				show_debug_message("NOT Facing a block which is one level higher");
+			}
+		}
+		case FACING.LEFT : {
+			show_debug_message("FACING LEFT");
+			
+			//If we're at the left edge, exit
+			if (coords.x == 0){
+				show_debug_message("we're at the left edge, exiting");
+				return;
+			}
+			
+			var _coords = get_coords(x - CELL_SIZE, y);
+			//get the cell and check its height
+			var _cell = global.grid[_coords.x][_coords.y];
+			if (_cell.height - level == 1){
+				curve = ascend.LEFT;
+				set_default_player_vars();
+				return;
+			}else{
+				show_debug_message("NOT Facing a block which is one level higher");
+			}
+		}
 		case FACING.RIGHT : {
 			show_debug_message("FACING RIGHT");
 			
@@ -40,12 +78,8 @@ function check_ascend(){
 			}
 			
 			var _coords = get_coords(x + CELL_SIZE, y);
-			show_debug_message("_coords: " + string(_coords));
 			//get the cell and check its height
 			var _cell = global.grid[_coords.x][_coords.y];
-			show_debug_message("_cell: " + string(_cell));
-			show_debug_message("level: " + string(level));
-			show_debug_message("_cell.height: " + string(_cell.height));
 			if (_cell.height - level == 1){
 				curve = ascend.RIGHT;
 				set_default_player_vars();
