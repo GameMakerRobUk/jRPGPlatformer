@@ -23,6 +23,17 @@ function check_descend(_facing){
 				traverse_slope(facing);
 				return;
 			}
+			
+			if (_cell.blocked[height]){
+				show_debug_message("cell is blocked at this height, exiting");
+				return;
+			}
+			
+			if (struct_get(_cell, "platform") != undefined){
+				target_y = y - CELL_SIZE;
+				can_move = false;
+				return;		
+			}
 				
 			//Determine whether it's higher, lower, or same height
 			var _height_diff = height - _cell.height;
@@ -30,10 +41,10 @@ function check_descend(_facing){
 			show_debug_message("_height_diff: " + string(_height_diff));
 				
 			//Cell is higher
-			if (_height_diff < 0){
-				show_debug_message("cell is higher, exiting");
-				return;
-			}
+			//if (_height_diff < 0){
+			//	show_debug_message("cell is higher, exiting");
+			//	return;
+			//}
 				
 			//Cell is same
 			if (_height_diff == 0){
@@ -62,6 +73,17 @@ function check_descend(_facing){
 				show_debug_message("There's a slope");
 				traverse_slope(facing);
 				return;
+			}
+			
+			if (_cell.blocked[height]){
+				show_debug_message("cell is blocked at this height, exiting");
+				return;
+			}
+			
+			if (struct_get(_cell, "platform") != undefined){
+				target_y = y + CELL_SIZE;
+				can_move = false;
+				return;		
 			}
 				
 			//Determine whether it's higher, lower, or same height
@@ -111,6 +133,17 @@ function check_descend(_facing){
 				traverse_slope(facing, _slope);
 				return;
 			}
+			
+			if (_cell.blocked[height]){
+				show_debug_message("cell is blocked at this height, exiting");
+				return;
+			}
+			
+			if (struct_get(_cell, "platform") != undefined){
+				target_x = x - CELL_SIZE;
+				can_move = false;
+				return;		
+			}
 				
 			//Determine whether it's higher, lower, or same height
 			var _height_diff = height - _cell.height;
@@ -157,6 +190,17 @@ function check_descend(_facing){
 				show_debug_message("There's a slope");
 				traverse_slope(facing, _slope);
 				return;
+			}
+			
+			if (_cell.blocked[height]){
+				show_debug_message("cell is blocked at this height, exiting");
+				return;
+			}
+			
+			if (struct_get(_cell, "platform") != undefined){
+				target_x = x + CELL_SIZE;
+				can_move = false;
+				return;		
 			}
 				
 			//Determine whether it's higher, lower, or same height

@@ -22,6 +22,7 @@ if (!initialised){
 	}
 	
 	with par_platform{
+		struct_set(global.grid[coords.x][coords.y], "platform", id);
 		global.grid[coords.x][coords.y].height = height;
 	}
 	
