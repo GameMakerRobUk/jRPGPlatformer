@@ -1,0 +1,1 @@
+draw_sprite(spr_player_facing, facing, x, y);

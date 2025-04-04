@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"curve_finished",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"curve_finished",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

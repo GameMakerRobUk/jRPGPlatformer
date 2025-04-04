@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"cellScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cellScripts",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
