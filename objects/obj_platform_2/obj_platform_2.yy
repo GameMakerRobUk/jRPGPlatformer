@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"par_platform",
+  "%Name":"obj_platform_2",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"par_platform",
+  "name":"obj_platform_2",
   "overriddenProperties":[],
   "parent":{
     "name":"Platforms",
     "path":"folders/Objects/Platforms.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_platform",
+    "path":"objects/par_platform/par_platform.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_platform_h2",
+    "path":"sprites/spr_platform_h2/spr_platform_h2.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
