@@ -12,5 +12,4 @@ draw =
 		}
 	}
 initialised = false;
-blocked = [true, false, false, false, false];
 height = 1;
