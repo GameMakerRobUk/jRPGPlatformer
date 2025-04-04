@@ -1,7 +1,7 @@
 can_move = true;
 move_speed = 2;
 z = 0;
-level = 0;
+height = 0;
 
 draw = function(){
 	//draw_sprite(spr_player_shadow, 0, x, y);
@@ -41,10 +41,11 @@ ascend = {
 }
 
 descend = {
-	UP : { ac : ac_descend_up, channels : [], timer : 0, inc : 0.1},
-	DOWN : { ac : ac_descend_down, channels : [], timer : 0, inc : 0.1},
-	LEFT : { ac : ac_descend_left, channels : [], timer : 0, inc : 0.1},
-	RIGHT : { ac : ac_descend_right, channels : [], timer : 0, inc : 0.1},
+	DOWN : [
+			{ ac : ac_descend_down_1, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_down_2, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_down_3, channels : [], timer : 0, inc : 0.1},
+	]
 }
 
 var _names = struct_get_names(ascend);
@@ -63,11 +64,18 @@ var _names = struct_get_names(descend);
 
 for (var i = 0; i < array_length(_names); i ++){
 	var _name = _names[i];
-	var _data = struct_get(descend, _name);
-	var _channels = animcurve_get(_data.ac).channels;
+	var _structs = struct_get(descend, _name);
 	
-	for (var j = 0; j < array_length(_channels); j ++){
-		array_push(_data.channels, _channels[j]);
+	show_debug_message("_structs: " + string(_structs))
+	
+	for (var j = 0; j < array_length(_structs); j ++){
+	
+		var _data = _structs[j];
+		var _channels = animcurve_get(_data.ac).channels;
+	
+		for (var k = 0; k < array_length(_channels); k ++){
+			array_push(_data.channels, _channels[k]);
+		}
 	}
 }
 
@@ -76,3 +84,4 @@ curve = ascend.UP;
 start_x = x;
 start_y = y;
 start_z = z;
+target_z = z;

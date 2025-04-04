@@ -20,12 +20,12 @@ function check_ascend(){
 			//get the cell and check its height
 			var _cell = global.grid[_coords.x][_coords.y];
 			
-			if (_cell.height - level == 1){
+			if (_cell.height - height == 1){
 				curve = ascend.UP;
 				set_default_player_vars();
 				return;
 			}else{
-				show_debug_message("NOT Facing a block which is one level higher");
+				show_debug_message("NOT Facing a block which is one height higher");
 			}
 		}; break;
 		case FACING.DOWN : {
@@ -40,12 +40,12 @@ function check_ascend(){
 			var _coords = get_coords(x, y + CELL_SIZE);
 			//get the cell and check its height
 			var _cell = global.grid[_coords.x][_coords.y];
-			if (_cell.height - level == 1){
+			if (_cell.height - height == 1){
 				curve = ascend.DOWN;
 				set_default_player_vars();
 				return;
 			}else{
-				show_debug_message("NOT Facing a block which is one level higher");
+				show_debug_message("NOT Facing a block which is one height higher");
 			}
 		}
 		case FACING.LEFT : {
@@ -60,12 +60,12 @@ function check_ascend(){
 			var _coords = get_coords(x - CELL_SIZE, y);
 			//get the cell and check its height
 			var _cell = global.grid[_coords.x][_coords.y];
-			if (_cell.height - level == 1){
+			if (_cell.height - height == 1){
 				curve = ascend.LEFT;
 				set_default_player_vars();
 				return;
 			}else{
-				show_debug_message("NOT Facing a block which is one level higher");
+				show_debug_message("NOT Facing a block which is one height higher");
 			}
 		}
 		case FACING.RIGHT : {
@@ -77,15 +77,14 @@ function check_ascend(){
 				return;	
 			}
 			
-			var _coords = get_coords(x + CELL_SIZE, y);
 			//get the cell and check its height
-			var _cell = global.grid[_coords.x][_coords.y];
-			if (_cell.height - level == 1){
+			var _cell = get_cell(x + CELL_SIZE, y);
+			if (_cell.height - height == 1){
 				curve = ascend.RIGHT;
 				set_default_player_vars();
 				return;
 			}else{
-				show_debug_message("NOT Facing a block which is one level higher");
+				show_debug_message("NOT Facing a block which is one height higher");
 			}
 		}
 	}

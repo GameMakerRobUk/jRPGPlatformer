@@ -6,36 +6,14 @@ if (can_move){
 		check_ascend();
 	}
 	
-	function check_descend(){
-		/*
-			Possibilities:
-			- Blocked (Higher level)
-			- Same level/height
-			- Lower level/height
-		*/
-	}
+	if (keyboard_check(ord("W"))) facing = FACING.UP;
+	else if (keyboard_check(ord("S"))) facing = FACING.DOWN;
+	else if (keyboard_check(ord("A"))) facing = FACING.LEFT;
+	else if (keyboard_check(ord("D"))) facing = FACING.RIGHT;
+	
 	
 	if (keyboard_check(ord("W")) || keyboard_check(ord("S")) || keyboard_check(ord("A")) || keyboard_check(ord("D"))){
-		//target_y = y - 32;
-		//facing = FACING.UP;
 		check_descend(facing);
-	}
-	//else if (keyboard_check(ord("S"))){
-	//	//target_y = y + 32;
-	//	//facing = FACING.DOWN;
-	//}
-	//else if (keyboard_check(ord("A"))){
-	//	//target_x = x - 32;
-	//	//facing = FACING.LEFT;
-	//}
-	//else if (keyboard_check(ord("D"))){
-	//	//target_x = x + 32;
-	//	//facing = FACING.RIGHT;
-	//}
-	
-	if (cell_is_blocked(target_x, target_y)){
-		target_y = y;
-		target_x = x;
 	}
 	
 	if (target_y != y || target_x != x){
@@ -65,9 +43,9 @@ if (using_ac_curve){
 				z = start_z + _value;	
 				show_debug_message("z channel: " + string({z : z, start_z : start_z, value: _value}))
 			}; break;
-			case "level" :{
+			case "height" :{
 				if (curve.timer == 1){
-					level += _value;	
+					height += _value;	
 				}
 			}; break;
 		}
