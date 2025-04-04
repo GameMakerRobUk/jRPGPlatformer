@@ -2,8 +2,8 @@
   "FolderOrderSettings":[
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"DOWN","order":3,"path":"folders/Animation Curves/DOWN.yy",},
-    {"name":"RIGHT","order":5,"path":"folders/Animation Curves/RIGHT.yy",},
     {"name":"LEFT","order":4,"path":"folders/Animation Curves/LEFT.yy",},
+    {"name":"RIGHT","order":5,"path":"folders/Animation Curves/RIGHT.yy",},
     {"name":"UP","order":2,"path":"folders/Animation Curves/UP.yy",},
     {"name":"Battle","order":16,"path":"folders/Battle.yy",},
     {"name":"Sprites","order":1,"path":"folders/Battle/Sprites.yy",},
@@ -44,6 +44,9 @@
     {"name":"obj_block_3","order":3,"path":"objects/obj_block_3/obj_block_3.yy",},
     {"name":"obj_draw","order":3,"path":"objects/obj_draw/obj_draw.yy",},
     {"name":"obj_grid","order":2,"path":"objects/obj_grid/obj_grid.yy",},
+    {"name":"obj_slope_l2r_1","order":5,"path":"objects/obj_slope_l2r_1/obj_slope_l2r_1.yy",},
+    {"name":"obj_slope_r2l_1","order":6,"path":"objects/obj_slope_r2l_1/obj_slope_r2l_1.yy",},
+    {"name":"par_slope","order":4,"path":"objects/par_slope/par_slope.yy",},
     {"name":"check_ascend","order":2,"path":"scripts/check_ascend/check_ascend.yy",},
     {"name":"check_descend","order":5,"path":"scripts/check_descend/check_descend.yy",},
     {"name":"curve_finished","order":3,"path":"scripts/curve_finished/curve_finished.yy",},
@@ -54,6 +57,8 @@
     {"name":"spr_height_3","order":6,"path":"sprites/spr_height_3/spr_height_3.yy",},
     {"name":"spr_player_facing","order":1,"path":"sprites/spr_player_facing/spr_player_facing.yy",},
     {"name":"spr_player_shadow","order":3,"path":"sprites/spr_player_shadow/spr_player_shadow.yy",},
+    {"name":"spr_slope_l2r_h1","order":7,"path":"sprites/spr_slope_l2r_h1/spr_slope_l2r_h1.yy",},
+    {"name":"spr_slope_r2l_h1","order":8,"path":"sprites/spr_slope_r2l_h1/spr_slope_r2l_h1.yy",},
     {"name":"spr_t","order":2,"path":"sprites/spr_t/spr_t.yy",},
   ],
 }
