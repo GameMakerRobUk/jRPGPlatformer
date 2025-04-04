@@ -13,5 +13,9 @@ if (!initialised){
 		global.grid[coords.x][coords.y].height = height;
 	}
 	
+	with par_slope{
+		struct_set(global.grid[coords.x][coords.y], "slope", id);
+	}
+	
 	initialised = true;
 }

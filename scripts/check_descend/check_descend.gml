@@ -17,6 +17,12 @@ function check_descend(_facing){
 				show_debug_message("cell is undefined");
 				return;	
 			}
+			
+			if (struct_get(_cell, "slope") != undefined || struct_get(get_cell(x, y), "slope") != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing);
+				return;
+			}
 				
 			//Determine whether it's higher, lower, or same height
 			var _height_diff = height - _cell.height;
@@ -51,6 +57,12 @@ function check_descend(_facing){
 				show_debug_message("cell is undefined");
 				return;	
 			}
+			
+			if (struct_get(_cell, "slope") != undefined || struct_get(get_cell(x, y), "slope") != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing);
+				return;
+			}
 				
 			//Determine whether it's higher, lower, or same height
 			var _height_diff = height - _cell.height;
@@ -84,6 +96,21 @@ function check_descend(_facing){
 				show_debug_message("cell is undefined");
 				return;	
 			}
+			
+			var _slope_left = struct_get(_cell, "slope")
+			
+			if (_slope_left != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing, _slope_left);
+				return;
+			}
+			
+			var _slope = struct_get(get_cell(x, y), "slope");
+			if (_slope != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing, _slope);
+				return;
+			}
 				
 			//Determine whether it's higher, lower, or same height
 			var _height_diff = height - _cell.height;
@@ -108,7 +135,6 @@ function check_descend(_facing){
 			set_default_player_vars();
 			curve = descend.LEFT[_height_diff];		
 		}; break;
-		
 		case FACING.RIGHT:{
 			show_debug_message("RIGHT");
 			//Get the cell
@@ -116,6 +142,12 @@ function check_descend(_facing){
 			if (_cell == undefined){
 				show_debug_message("cell is undefined");
 				return;	
+			}
+			
+			if (struct_get(_cell, "slope") != undefined || struct_get(get_cell(x, y), "slope") != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing);
+				return;
 			}
 				
 			//Determine whether it's higher, lower, or same height

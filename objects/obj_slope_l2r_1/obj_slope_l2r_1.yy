@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
   "%Name":"obj_slope_l2r_1",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_slope_l2r_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Blocks",
-    "path":"folders/Objects/Blocks.yy",
+    "name":"SLOPES",
+    "path":"folders/Objects/SLOPES.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_slope",
+    "path":"objects/par_slope/par_slope.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

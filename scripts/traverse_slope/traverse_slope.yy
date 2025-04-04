@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"traverse_slope",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"traverse_slope",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
