@@ -41,11 +41,29 @@ ascend = {
 }
 
 descend = {
+	UP : [  {},
+			{ ac : ac_descend_up_1, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_up_2, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_up_3, channels : [], timer : 0, inc : 0.1},
+	],
 	DOWN : [
+			{},
 			{ ac : ac_descend_down_1, channels : [], timer : 0, inc : 0.1},
 			{ ac : ac_descend_down_2, channels : [], timer : 0, inc : 0.1},
 			{ ac : ac_descend_down_3, channels : [], timer : 0, inc : 0.1},
-	]
+	],
+	LEFT : [
+			{},
+			{ ac : ac_descend_left_1, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_left_2, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_left_3, channels : [], timer : 0, inc : 0.1},
+	],
+	RIGHT : [
+			{},
+			{ ac : ac_descend_right_1, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_right_2, channels : [], timer : 0, inc : 0.1},
+			{ ac : ac_descend_right_3, channels : [], timer : 0, inc : 0.1},
+	],
 }
 
 var _names = struct_get_names(ascend);
@@ -68,7 +86,7 @@ for (var i = 0; i < array_length(_names); i ++){
 	
 	show_debug_message("_structs: " + string(_structs))
 	
-	for (var j = 0; j < array_length(_structs); j ++){
+	for (var j = 1; j < array_length(_structs); j ++){
 	
 		var _data = _structs[j];
 		var _channels = animcurve_get(_data.ac).channels;
@@ -78,6 +96,8 @@ for (var i = 0; i < array_length(_names); i ++){
 		}
 	}
 }
+
+show_debug_message("descend: " + string(descend));
 
 using_ac_curve = false;
 curve = ascend.UP;

@@ -20,8 +20,8 @@
   "function":0,
   "name":"ac_ascend_right",
   "parent":{
-    "name":"Animation Curves",
-    "path":"folders/Animation Curves.yy",
+    "name":"RIGHT",
+    "path":"folders/Animation Curves/RIGHT.yy",
   },
   "resourceType":"GMAnimCurve",
   "resourceVersion":"2.0",

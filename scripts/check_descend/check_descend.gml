@@ -10,6 +10,7 @@ function check_descend(_facing){
 	*/
 	switch _facing{
 		case FACING.UP:{
+			show_debug_message("UP");
 			//Get the cell
 			var _cell = get_cell(x, y - CELL_SIZE);
 			if (_cell == undefined){
@@ -39,9 +40,11 @@ function check_descend(_facing){
 			//Cell is lower - height difference can be variable here
 			set_default_player_vars();
 			
+			curve = descend.UP[_height_diff];	
 				
 		}; break;
 		case FACING.DOWN : {
+			show_debug_message("DOWN");
 			//Get the cell
 			var _cell = get_cell(x, y + CELL_SIZE);
 			if (_cell == undefined){
@@ -70,15 +73,11 @@ function check_descend(_facing){
 			
 			//Cell is lower - height difference can be variable here
 			set_default_player_vars();
-			
-			switch _height_diff{
-				case 1 : curve = descend.DOWN[0]; break;	
-				case 2 : curve = descend.DOWN[1]; break;	
-				case 3 : curve = descend.DOWN[2]; break;	
-			}
+			curve = descend.DOWN[_height_diff];	
 			
 		}; break;
 		case FACING.LEFT:{
+			show_debug_message("LEFT");
 			//Get the cell
 			var _cell = get_cell(x - CELL_SIZE, y);
 			if (_cell == undefined){
@@ -107,10 +106,11 @@ function check_descend(_facing){
 			
 			//Cell is lower - height difference can be variable here
 			set_default_player_vars();
-			
-				
+			curve = descend.LEFT[_height_diff];		
 		}; break;
+		
 		case FACING.RIGHT:{
+			show_debug_message("RIGHT");
 			//Get the cell
 			var _cell = get_cell(x + CELL_SIZE, y);
 			if (_cell == undefined){
@@ -139,8 +139,7 @@ function check_descend(_facing){
 			
 			//Cell is lower - height difference can be variable here
 			set_default_player_vars();
-			
-				
+			curve = descend.RIGHT[_height_diff];
 		}; break;
 	}
 }

@@ -20,8 +20,8 @@
   "function":0,
   "name":"ac_ascend_up",
   "parent":{
-    "name":"Animation Curves",
-    "path":"folders/Animation Curves.yy",
+    "name":"UP",
+    "path":"folders/Animation Curves/UP.yy",
   },
   "resourceType":"GMAnimCurve",
   "resourceVersion":"2.0",
