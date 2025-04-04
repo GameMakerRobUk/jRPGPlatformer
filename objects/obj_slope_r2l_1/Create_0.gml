@@ -1,2 +1,5 @@
 event_inherited();
-ac = ac_slope_r2l;
+ac = {
+	left : ac_slope_r2l_ascend,
+	right : ac_slope_r2l_descend,
+};

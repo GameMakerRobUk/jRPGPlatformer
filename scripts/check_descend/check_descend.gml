@@ -144,9 +144,18 @@ function check_descend(_facing){
 				return;	
 			}
 			
-			if (struct_get(_cell, "slope") != undefined || struct_get(get_cell(x, y), "slope") != undefined){
+			var _slope_right = struct_get(_cell, "slope")
+			
+			if (_slope_right != undefined){
 				show_debug_message("There's a slope");
-				traverse_slope(facing);
+				traverse_slope(facing, _slope_right);
+				return;
+			}
+			
+			var _slope = struct_get(get_cell(x, y), "slope");
+			if (_slope != undefined){
+				show_debug_message("There's a slope");
+				traverse_slope(facing, _slope);
 				return;
 			}
 				

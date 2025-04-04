@@ -23,7 +23,7 @@
   ],
   "name":"spr_slope_r2l_h1",
   "nineSlice":null,
-  "origin":9,
+  "origin":6,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":17,
+    "yorigin":49,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

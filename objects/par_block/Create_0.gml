@@ -13,3 +13,4 @@ draw =
 	}
 initialised = false;
 height = 1;
+z = 0;

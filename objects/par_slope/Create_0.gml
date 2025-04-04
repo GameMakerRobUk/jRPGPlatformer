@@ -1,4 +1,4 @@
-coords = get_coords(x, y);
+coords = get_coords(x, y - CELL_SIZE);
 
 draw = 
 	function(){
@@ -15,3 +15,4 @@ initialised = false;
 
 min_height = 0;
 max_height = 1;
+z = 0;
