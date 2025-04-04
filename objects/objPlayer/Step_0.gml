@@ -5,22 +5,33 @@ if (can_move){
 	if (keyboard_check_pressed(vk_space)){
 		check_ascend();
 	}
-	else if (keyboard_check(ord("W"))){
-		target_y = y - 32;
-		facing = FACING.UP;
+	
+	function check_descend(){
+		/*
+			Possibilities:
+			- Blocked (Higher level)
+			- Same level/height
+			- Lower level/height
+		*/
 	}
-	else if (keyboard_check(ord("S"))){
-		target_y = y + 32;
-		facing = FACING.DOWN;
+	
+	if (keyboard_check(ord("W")) || keyboard_check(ord("S")) || keyboard_check(ord("A")) || keyboard_check(ord("D"))){
+		//target_y = y - 32;
+		//facing = FACING.UP;
+		check_descend(facing);
 	}
-	else if (keyboard_check(ord("A"))){
-		target_x = x - 32;
-		facing = FACING.LEFT;
-	}
-	else if (keyboard_check(ord("D"))){
-		target_x = x + 32;
-		facing = FACING.RIGHT;
-	}
+	//else if (keyboard_check(ord("S"))){
+	//	//target_y = y + 32;
+	//	//facing = FACING.DOWN;
+	//}
+	//else if (keyboard_check(ord("A"))){
+	//	//target_x = x - 32;
+	//	//facing = FACING.LEFT;
+	//}
+	//else if (keyboard_check(ord("D"))){
+	//	//target_x = x + 32;
+	//	//facing = FACING.RIGHT;
+	//}
 	
 	if (cell_is_blocked(target_x, target_y)){
 		target_y = y;
