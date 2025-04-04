@@ -47,7 +47,7 @@ function check_ascend(){
 			}else{
 				show_debug_message("NOT Facing a block which is one height higher");
 			}
-		}
+		}; break;
 		case FACING.LEFT : {
 			show_debug_message("FACING LEFT");
 			
@@ -67,7 +67,7 @@ function check_ascend(){
 			}else{
 				show_debug_message("NOT Facing a block which is one height higher");
 			}
-		}
+		}; break;
 		case FACING.RIGHT : {
 			show_debug_message("FACING RIGHT");
 			
@@ -86,6 +86,6 @@ function check_ascend(){
 			}else{
 				show_debug_message("NOT Facing a block which is one height higher");
 			}
-		}
+		}; break;
 	}
 }

@@ -1,4 +1,5 @@
 function curve_finished(){
+	show_debug_message("curve_finished")
 	using_ac_curve = false;
 	can_move = true;
 	curve.timer = 0;
@@ -8,4 +9,6 @@ function curve_finished(){
 	target_y = y;
 	target_x = x;
 	coords = get_coords(x, y);
+	
+	show_debug_message("x: " + string(x) + ", y: " + string(y) + ", coords: " + string(coords));
 }

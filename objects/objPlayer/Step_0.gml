@@ -26,28 +26,28 @@ if (can_move){
 if (using_ac_curve){
 	show_debug_message("using curve: " + animcurve_get(curve.ac).name)
 	curve.timer += curve.inc;
-	show_debug_message("curve.timer: " + string(curve.timer))
+	//show_debug_message("curve.timer: " + string(curve.timer))
 	for (var i = 0; i < array_length(curve.channels); i ++){
 		var _channel = curve.channels[i];
 		var _value = animcurve_channel_evaluate(_channel, curve.timer);
-		show_debug_message("_channel: " + string(_channel))
+		//show_debug_message("_channel: " + string(_channel))
 		switch _channel.name{
 			case "x" :{
 				x = start_x + _value;	
-				show_debug_message("x channel: " + string({x : x, start_x : start_x, value: _value}))
+				//show_debug_message("x channel: " + string({x : x, start_x : start_x, value: _value}))
 			}; break;
 			case "y" :{
 				y = start_y + _value;	
-				show_debug_message("y channel: " + string({y : y, start_y : start_y, value: _value}))
+				//show_debug_message("y channel: " + string({y : y, start_y : start_y, value: _value}))
 			}; break;
 			case "z" :{
 				z = start_z + _value;	
-				show_debug_message("z channel: " + string({z : z, start_z : start_z, value: _value}))
+				//show_debug_message("z channel: " + string({z : z, start_z : start_z, value: _value}))
 			}; break;
 			case "height" :{
 				if (curve.timer == 1){
 					height += _value;	
-					show_debug_message("height channel: " + string({height : height, value: _value}))
+					//show_debug_message("height channel: " + string({height : height, value: _value}))
 				}
 			}; break;
 		}
